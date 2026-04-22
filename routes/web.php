@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProdukController;
+
+Route::get('/list-product', [ProdukController::class, 'index']);
+
 
 // Route default (home)
 Route::get('/', [HomeController::class, 'index']);
@@ -32,3 +36,4 @@ Route::prefix('admin')->group(function () {
     // ✅ Route ke controller AdminController
     Route::get('/barang', [AdminController::class, 'tampilkan']);
 });
+
